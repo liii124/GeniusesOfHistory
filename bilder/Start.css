@@ -5,11 +5,6 @@
     --border:.1rem solid #d2cdc5;
     ;
 }
- /* Detta kommer värka på all kod, border-box talar om för webbläsaren att ta hänsyn till eventuell kantlinje och utfyllnad i de värden du anger för ett elements bredd och höjd.
- Om du ställer in ett elements bredd till 100 pixlar, kommer de 100 pixlarna att inkludera alla ramar eller utfyllnad som du lagt till
- När text decration är 0 så kommer det inte finnas någon under tex  länkarna i navbaren
- Transation gör så att den går lika snabbt fram som bak  */ 
-
 
 *{
     font-family: 'Roboto', sans-serif;
@@ -19,7 +14,6 @@
     transition: .2s linear;
 }
 
-/* Detta sätter backrundsfärgerna för hela html sidan av Start.html och mina egengjorda "commandon" */
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -35,7 +29,7 @@ html::-webkit-scrollbar-track{
     background: transparent;
 }
 
-html::-webkit-scrollbar-thumb{  /* Detta kommer att göra att när man lägger musen på menyn så blir den skuggad */
+html::-webkit-scrollbar-thumb{
     background: #fff;
     border-radius: 5rem;
 }
@@ -47,7 +41,6 @@ body{
 section{
     padding:2rem 7%;
 }
-
 
 .heading{
     text-align: center;
@@ -119,6 +112,94 @@ section{
     display: none;
 }
 
+.header .Söker{
+    position: absolute;
+    top:115%; right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .Söker.active{
+    transform: scaleY(1);
+}
+
+.header .Söker input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color:var(--white);
+    padding:1rem;
+    text-transform: none;
+}
+
+.header .Söker label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color:var(--white);
+}
+
+.header .Söker label:hover{
+    color:var(--main-color);
+}
+
+.header .cart-items-container{
+    position: absolute;
+    top:100%; right: -100%;
+    height: calc(100vh - 9.5rem);
+    width: 35rem;
+    background: #fff;
+    padding:0 1.5rem;
+}
+
+.header .cart-items-container.active{
+    right: 0;
+}
+
+.header .cart-items-container .cart-item{
+    position: relative;
+    margin:2rem 0;
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+}
+
+.header .cart-items-container .cart-item .Kryss{
+    position: absolute;
+    top:1rem; right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.header .cart-items-container .cart-item .Kryss:hover{
+    color:var(--main-color);
+}
+
+.header .cart-items-container .cart-item img{
+    height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3{
+    font-size: 2rem;
+    color:var(--white);
+    padding-bottom: .5rem;
+}
+
+.header .cart-items-container .cart-item .content .price{
+    font-size: 1.5rem;
+    color:var(--main-color);
+}
+
+.header .cart-items-container .btn{
+    width: 100%;
+    text-align: center;
+}
 
 
 
@@ -161,32 +242,32 @@ section{
 
 
 
-.OmOss .Rad{
+.OmOss .row{
     display: flex;
     align-items: center;
     background:var(--white);
     flex-wrap: wrap;
 }
 
-.OmOss .Rad .Bilderna
+.OmOss .row .Bilderna
 {
     flex:1 1 45rem;
 }
 
-.OmOss .Rad .Bilderna img{
+.OmOss .row .Bilderna img{
     width: 70%;
 }
-.OmOss .Rad .content{
+.OmOss .row .content{
     flex:1 1 45rem;
     padding:2rem;
 }
 
-.OmOss .Rad .content h3{
+.OmOss .row .content h3{
     font-size: 3rem;
     color:#fff;
 }
 
-.OmOss .Rad .content p{
+.OmOss .row .content p{
     font-size: 1.6rem;
     color:#ccc;
     padding:1rem 0;
@@ -300,74 +381,69 @@ section{
 
 
 
-.Omdöme .Låda-container{
+.review .Låda-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap:1.5rem;
 }
 
-.Omdöme .Låda-container .Låda{
+.review .Låda-container .Låda{
     border:var(--border);
     text-align: center;
     padding:3rem 2rem;
 }
 
-.Omdöme .Låda-container .Låda p{
+.review .Låda-container .Låda p{
     font-size: 1.5rem;
     line-height: 1.8;
     color:#ccc;
     padding:2rem 0;
 }
 
-.Omdöme .Låda-container .Låda .Användare{
+.review .Låda-container .Låda .user{
     height: 7rem;
     width: 7rem;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.Omdöme .Låda-container .Låda h3{
+.review .Låda-container .Låda h3{
     padding:1rem 0;
     font-size: 2rem;
     color:#fff;
 }
 
-.Omdöme .Låda-container .Låda .stars i{
+.review .Låda-container .Låda .stars i{
     font-size: 1.5rem;
     color:var(--main-color);
 }
 
-
-
-
-
-
-.Kontakt .Rad{
+.contact .row{
     display: flex;
     background:var(--white);
     flex-wrap: wrap;
     gap:1rem;
 }
 
-.Kontakt .Rad .map{
+.contact .row .map{
     flex:1 1 45rem;
     width: 100%;
     object-fit: cover;
 }
 
-.Kontakt .Rad form{
+.contact .row form{
     flex:1 1 45rem;
     padding:5rem 2rem;
     text-align: center;
 }
 
-.Kontakt .Rad form h3{
+.contact .row form h3{
     text-transform: uppercase;
     font-size: 3.5rem;
     color:#fff;
 }
 
-.Kontakt .Rad form .inputLåda{
+.contact .row form .inputLåda{
     display: flex;
     align-items: center;
     margin-top: 2rem;
@@ -376,13 +452,13 @@ section{
     border:var(--border);
 }
 
-.Kontakt .Rad form .inputLåda span{
+.contact .row form .inputLåda span{
     color:#fff;
     font-size: 2rem;
     padding-left: 2rem;
 }
 
-.Kontakt .Rad form .inputLåda input{
+.contact .row form .inputLåda input{
     width: 100%;
     padding:2rem;
     font-size: 1.7rem;
@@ -397,11 +473,11 @@ section{
     text-align: center;
 }
 
-.footer .Dela{
+.footer .share{
     padding:1rem 0;
 }
 
-.footer .Dela a{
+.footer .share a{
     height: 5rem;
     width: 5rem;
     line-height: 5rem;
@@ -412,9 +488,11 @@ section{
     border-radius: 50%;
 }
 
+.footer .share a:hover{
+    background-color: var(--main-color);
+}
 
-
-.footer .Länkar{
+.footer .links{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -422,14 +500,14 @@ section{
     gap:1rem;
 }
 
-.footer .Länkar a{
+.footer .links a{
     padding:.7rem 2rem;
     color:#fff;
     border:var(--border);
     font-size: 2rem;
 }
 
-.footer .Länkar a:hover{
+.footer .links a:hover{
     background:var(--main-color);
 }
 
@@ -437,6 +515,11 @@ section{
     display: flex;
 }
 
+.Bilden{
+    display: flex;
+    justify-content: center;
+
+}
 
 
 
@@ -444,13 +527,11 @@ section{
 
 
 
-/* Media är till för css som anpassar till olika senarion tex om max width på en enhet är 991 pixlar*/
 
 
 
 
-
-
+/* media queries  */
 @media (max-width:991px){
 
     html{
@@ -515,10 +596,10 @@ section{
 }
 
 @media (max-width:450px){
-    
 
     html{
         font-size: 50%;
     }
 
 }
+
